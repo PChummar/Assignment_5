@@ -22,7 +22,10 @@ class UtPod
       SongNode *songs;  //the head pointer
       
       int memSize;
+
+      //swaps the elements of the list at the "first" and "second" indexes passed by the user, with the head of the list being index 0, the next element being index 1
       void swap(int first, int second);
+      //ensures the srand function is only seeded once
       int randFlag;
    
    public:

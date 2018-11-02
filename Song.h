@@ -25,6 +25,9 @@ class Song
         string getTitle() const;
         string getArtist() const;
         int getSize() const;
+        void setTitle(string title);
+        void setArtist(string artist);
+        void setSize(int size);
 };
 
 #endif

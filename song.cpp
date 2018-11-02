@@ -97,3 +97,15 @@ Song & Song::operator=(const Song &rhs){
 	size = rhs.size;
 	return *this;
 }
+
+void Song::setArtist(string artist){
+    this->artist = artist;
+}
+
+void Song::setTitle(string title) {
+    this->title = title;
+}
+
+void Song::setSize(int size) {
+    this->size = size;
+}

@@ -26,7 +26,12 @@ int main(int argc, char *argv[])
 
     Song s1;
     cout << "Prints title, artist, and size, as designated by the default constructor (should be blank, blank, and 0 respectively): " << s1.getTitle() << ", " << s1.getArtist() << ", " <<s1.getSize() <<endl;
-
+    s1.setSize(10);
+    s1.setTitle("Wonderwall");
+    s1.setArtist("Oasis");
+    testPod2.addSong(s1);
+    cout << "Tests ability to edit song data with setter methods: " <<endl;
+    testPod2.showSongList();
     Song s2("The Beatles", "A Day In The Life", 20);
     int result = testPod2.addSong(s2);
     cout << "result = " << result << endl;
