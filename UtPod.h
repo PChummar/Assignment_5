@@ -2,7 +2,7 @@
 
 #ifndef UTPOD_H
 #define UTPOD_H
-#include "Song.h"
+#include "song.h"
 
 //UtPod class declaration
 class UtPod
@@ -22,6 +22,8 @@ class UtPod
       SongNode *songs;  //the head pointer
       
       int memSize;
+      void swap(int first, int second);
+      int randFlag;
    
    public:
       //Default constructor
@@ -41,9 +43,9 @@ class UtPod
 
        precondition: s is a valid Song
 
-       input parms -
+       input parms - A song, passed by reference
 
-       output parms -
+       output parms - 0 if songs is successfully added, -1 otherwise
       */
 
       int addSong(Song const &s);
@@ -73,7 +75,7 @@ class UtPod
          output parms -
       */
 
-      void shuffle();
+     void shuffle();
 
 
       /* FUNCTION - void showSongList

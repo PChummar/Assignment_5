@@ -1,6 +1,33 @@
-#include "Song.h"	
+#include "song.h"
 #include <iostream>
+#include <string>
+#include <ctime>
+
 using namespace std;
+
+Song::Song(){
+	this->title = " ";
+	this->artist = " ";
+	this->size = 0;
+}
+
+Song::Song(string artist, string title, int size) {
+	this->title = title;
+	this->artist = artist;
+	this->size = size;
+}
+
+string Song::getTitle() const{
+	return title;
+}
+
+string Song::getArtist() const{
+	return artist;
+}
+
+int Song::getSize() const{
+	return size;
+}
 
 bool Song::operator >(Song const &rhs){
 	bool result = false;
@@ -12,10 +39,10 @@ bool Song::operator >(Song const &rhs){
 			return true;
 		}
 		else if(title == rhs.title){
-			if(length > rhs.length){
+			if(size > rhs.size){
 				return true;
 			}
-			else if(length == rhs.length){
+			else if(size == rhs.size){
 				return false;
 			}
 			else{
@@ -41,10 +68,10 @@ bool Song::operator <(Song const &rhs){
 			return true;
 		}
 		else if(title == rhs.title){
-			if(length < rhs.length){
+			if(size < rhs.size){
 				return true;
 			}
-			else if(length == rhs.length){
+			else if(size == rhs.size){
 				return false;
 			}
 			else{
@@ -61,5 +88,12 @@ bool Song::operator <(Song const &rhs){
 }
 
 bool Song::operator ==(Song const &rhs){
-	return ((artist == rhs.artist) && (title == rhs.title) &&(length == rhs.length));
+	return ((artist == rhs.artist) && (title == rhs.title) &&(size == rhs.size));
+}
+
+Song & Song::operator=(const Song &rhs){
+	artist = rhs.artist;
+	title = rhs.title;
+	size = rhs.size;
+	return *this;
 }
